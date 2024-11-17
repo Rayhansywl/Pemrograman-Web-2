@@ -1,14 +1,14 @@
 <?php 
 
-require_once "Model/Lisbuku.php";
+require_once "Model/Listbuku.php";
 
 class BukuController{
 
   public function jalankan(){
 
     //menggunakan model
-    $dataModel = new LisBuku();
-   
+    $dataModel = new ListBuku();
+
     //mengirim datamodel ke bukuview dan menampilkannya 
     include "View/BukuView.php";
   }
@@ -16,7 +16,7 @@ class BukuController{
   public function editBuku(){
     $id = $_GET['id'];
 
-    $daftar_buku = new LisBuku();
+    $daftar_buku = new ListBuku();
     $buku = $daftar_buku->getDataById($id);
 
     include_once "View/EditBukuView.php";
@@ -26,7 +26,7 @@ class BukuController{
     $buku = new Buku($_POST['judul'], $_POST['pengarang'], $_POST['penerbit'], $_POST['tahun']);
     $buku->setId($_POST['id']);
 
-    $daftar_buku = new LisBuku();
+    $daftar_buku = new ListBuku();
 
     $daftar_buku->update($buku);
 
@@ -42,7 +42,7 @@ class BukuController{
     $buku = new Buku($_POST['judul'], $_POST['pengarang'], $_POST['penerbit'], $_POST['tahun']);
 
     //menyimpan data ke model kemudian ke database 
-    $daftar_buku = new LisBuku();
+    $daftar_buku = new ListBuku();
     $daftar_buku->simpan($buku);
 
     session_start();
@@ -56,7 +56,7 @@ class BukuController{
   public function hapusBuku(){
     $id = $_POST['id'];
 
-    $daftar_buku = new LisBuku();
+    $daftar_buku = new ListBuku();
     $daftar_buku->delete($id);
 
     session_start();

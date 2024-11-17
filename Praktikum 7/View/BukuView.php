@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Daftar Buku</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -135,14 +135,8 @@
     <script>
         const hapusModal = document.getElementById('hapusModal')
         hapusModal.addEventListener('show.bs.modal', event => {
-            // Button that triggered the modal
             const button = event.relatedTarget
-            // Extract info from data-bs-* attributes
             const id = button.getAttribute('data-bs-id')
-            // If necessary, you could initiate an AJAX request here
-            // and then do the updating in a callback.
-            //
-            // Update the modal's content.
             const idHapus = hapusModal.querySelector('#idHapus')
             const textId = hapusModal.querySelector('#textId')
 
